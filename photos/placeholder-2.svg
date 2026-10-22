@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1a0510"/>
+      <stop offset="45%" stop-color="#4a0a1f"/>
+      <stop offset="100%" stop-color="#d9b76f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg2)"/>
+  <circle cx="180" cy="120" r="75" fill="#f5ead8" opacity="0.45"/>
+  <path d="M40 385C150 260 270 230 382 245C486 258 590 330 760 440V520H40Z" fill="#f2d6de" opacity="0.72"/>
+  <text x="400" y="285" text-anchor="middle" fill="#f5ead8" font-size="44" font-family="Georgia, serif" letter-spacing="4">Souvenir 2</text>
+</svg>

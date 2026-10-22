@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bg1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4a0a1f"/>
+      <stop offset="50%" stop-color="#7b2440"/>
+      <stop offset="100%" stop-color="#f5ead8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg1)"/>
+  <circle cx="650" cy="120" r="75" fill="#f2d6de" opacity="0.5"/>
+  <path d="M130 390C210 250 260 220 340 220C440 220 520 310 620 390V520H130Z" fill="#f5ead8" opacity="0.7"/>
+  <text x="400" y="270" text-anchor="middle" fill="#f5ead8" font-size="44" font-family="Georgia, serif" letter-spacing="4">Souvenir 1</text>
+</svg>

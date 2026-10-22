@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a0510" />
+    <title>Surprise Romantique</title>
+    <meta
+      name="description"
+      content="Une surprise romantique et personnalisable pour une occasion spéciale."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="audioToggle" class="audio-toggle" type="button" aria-label="Couper le son" title="Couper le son">
+      🔊
+    </button>
+
+    <div class="background-glows" aria-hidden="true">
+      <span class="glow glow-1"></span>
+      <span class="glow glow-2"></span>
+      <span class="glow glow-3"></span>
+    </div>
+    <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+
+    <main class="page-shell" aria-live="polite">
+      <section class="screen invite-screen reveal" id="invite-screen">
+        <div class="lock-wrap" aria-hidden="true">
+          <span class="lock-icon">🔒</span>
+        </div>
+        <p class="eyebrow">Invitation privée</p>
+        <h1>Joyeux anniversaire <span id="prenomDisplay">Candy</span></h1>
+        <p class="subtitle">Quel est le mot qui ouvre cette surprise ?</p>
+        <p class="subtitle small">Indice : morceaux de Francis Cabrel</p>
+
+        <form id="secretForm" novalidate>
+          <label for="secretInput" class="sr-only">Le mot secret</label>
+          <div class="input-row">
+            <input
+              id="secretInput"
+              name="secret"
+              type="text"
+              autocomplete="off"
+              placeholder="Le mot secret"
+              aria-label="Le mot secret"
+            />
+            <button type="submit">Ouvrir</button>
+          </div>
+          <p id="secretMessage" class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="screen locked-content reveal" id="timeline-screen">
+        <p class="eyebrow">Les moments que je n'oublierai jamais</p>
+        <h2>Juste toi, tel que tu es</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="screen locked-content reveal" id="traits-screen">
+        <p class="eyebrow">Tout ce qui te rend unique</p>
+        <h2>Ce que j'aime chez toi</h2>
+        <div class="paper-card">
+          <ol class="trait-list" id="traitList"></ol>
+        </div>
+      </section>
+
+      <section class="screen locked-content reveal" id="destination-screen">
+        <p class="eyebrow">Un petit jeu</p>
+        <h2>Notre prochaine destination</h2>
+        <div class="destination-grid" id="destinationChoices" aria-label="Choix de destination"></div>
+        <p id="destinationMessage" class="destination-message" aria-live="polite"></p>
+      </section>
+
+      <section class="screen locked-content reveal playlist-screen" id="playlist-screen">
+        <p class="eyebrow playlist-eyebrow">BANDE-SON DE NOTRE HISTOIRE</p>
+        <h2 class="playlist-title">Les chansons qui parlent à ma place</h2>
+        <p id="playlistIntro" class="playlist-intro"></p>
+
+        <div class="vinyl-card">
+          <div class="vinyl-disc" aria-hidden="true">
+            <span class="vinyl-heart">♥</span>
+          </div>
+
+          <div class="spotify-embed-wrap">
+            <iframe
+              title="Notre playlist sur Spotify"
+              data-testid="embed-iframe"
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/playlist/2TvKDe9fZjxtfjP3jHphyo?utm_source=generator&si=77a5069ff6984668"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="playlist-note">Sur téléphone, Spotify peut ne jouer que des extraits. Pour tout écouter :</div>
+        <a
+          class="spotify-link"
+          href="https://open.spotify.com/playlist/2TvKDe9fZjxtfjP3jHphyo"
+          target="_blank"
+          rel="noopener"
+        >
+          Ouvrir la playlist dans Spotify
+        </a>
+
+        <div class="chapter-grid" id="chapterGrid" aria-label="Chapitres de la playlist"></div>
+
+        <div class="playlist-closing">
+          <span class="playlist-heart" aria-hidden="true">♥</span>
+          <p id="playlistFinalPhrase"></p>
+        </div>
+      </section>
+
+      <section class="screen locked-content final-screen reveal" id="final-screen">
+        <div class="final-overlay" aria-hidden="true"></div>
+        <div class="final-content">
+          <p class="eyebrow">Pour toi</p>
+          <h2>Je t'aime et je t'aimerai toujours</h2>
+          <p class="final-subtitle">Joyeux anniversaire</p>
+
+          <div class="response-row" aria-label="Choix de réponse">
+            <button type="button" class="response-btn" data-message="J'adore ❤️">J'adore</button>
+            <button type="button" class="response-btn" data-message="Tu m'as ému(e) 🥹">Tu m'as ému(e)</button>
+            <button type="button" class="response-btn" data-message="petit-mot">Un petit mot</button>
+          </div>
+
+          <button id="lyricsToggle" class="lyrics-toggle" type="button" aria-expanded="false">Afficher les paroles</button>
+          <div id="lyricsBox" class="lyrics-box hidden" aria-live="polite"></div>
+
+          <div id="customMessageBox" class="custom-message hidden">
+            <label for="customText" class="sr-only">Ton petit mot</label>
+            <textarea id="customText" rows="4" placeholder="Écris un petit mot…"></textarea>
+            <button id="sendCustomMessage" type="button">Envoyer</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
